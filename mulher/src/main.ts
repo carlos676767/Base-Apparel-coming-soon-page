@@ -17,3 +17,19 @@ const setarLarguraEtamanho = (imagem: HTMLImageElement) => {
 }
 
 manipularQuery()
+
+const input = document.querySelector("input") as HTMLInputElement
+const valorSemNada = (input: string) => {
+  return input === ""
+}
+const validacoes = () => {
+  if (valorSemNada(input.value)) {
+    alert("sem nd")
+  }
+}
+
+
+const botao = document.querySelector("button") as HTMLButtonElement
+botao.addEventListener("click", () => {
+  validacoes()
+})
