@@ -23,13 +23,11 @@ const valorSemNada = (input: string) => {
   return input === ""
 }
 const inputValidarEmail = (input: string)  => {
-  const regex = /@[a-zA-Z0-9.-]+\.com\b/;
-  return regex.test(input)
+  const regex = /@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}\b/
+  return !regex.test(input)
 }
 
-
 const exibirtexto = document.querySelector(".exibirtexto") as HTMLParagraphElement
-
 const addClassesEtirar = (texto: HTMLParagraphElement, valor1: string, valor2: string) => {
   texto.classList.add(valor1)
   texto.classList.remove(valor2)
@@ -44,7 +42,6 @@ const mensagemEnviado = () => {
   exibirtexto.innerHTML = "Dados enviados com sucesso!"
   addClassesEtirar(exibirtexto,"remover", "alerta")
 }
-
 
 const validacoes = () => {
   if (valorSemNada(input.value)) {
