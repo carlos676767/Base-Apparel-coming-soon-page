@@ -80,3 +80,12 @@ button{
 body{
   background-image: url(base-apparel-coming-soon-master/images/bg-pattern-desktop.svg);
 }
+
+@media (max-width: 768px) {
+  main{
+    display: flex;
+    flex-direction: column;
+  }
+
+ 
+}
