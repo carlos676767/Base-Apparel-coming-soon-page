@@ -43,11 +43,15 @@ const mensagemEnviado = () => {
   addClassesEtirar(exibirtexto,"remover", "alerta")
 }
 
+const mensagemInvalido = () => {
+  exibirtexto.innerHTML = "email invalido"
+  addClassesEtirar(exibirtexto, "alerta", "remover")
+}
 const validacoes = () => {
   if (valorSemNada(input.value)) {
     mensagemVazio()
   }else if(inputValidarEmail(input.value)){
-    alert("email invalido")
+  mensagemInvalido()
   }else{
     mensagemEnviado()
   }
