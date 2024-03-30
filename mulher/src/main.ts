@@ -40,13 +40,19 @@ const mensagemVazio = () => {
   addClassesEtirar(exibirtexto, "alerta", "remover")
 }
 
+const mensagemEnviado = () => {
+  exibirtexto.innerHTML = "Dados enviados com sucesso!"
+  addClassesEtirar(exibirtexto,"remover", "alerta")
+}
+
+
 const validacoes = () => {
   if (valorSemNada(input.value)) {
     mensagemVazio()
   }else if(inputValidarEmail(input.value)){
     alert("email invalido")
   }else{
-    alert("dados")
+    mensagemEnviado()
   }
 }
 
