@@ -92,3 +92,11 @@ body{
     width: 100%;
   }
 }
+
+.alerta{
+  color: red;
+}
+
+.remover{
+  color: black;
+}

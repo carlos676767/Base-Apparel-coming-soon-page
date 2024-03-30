@@ -22,12 +22,33 @@ const input = document.querySelector("input") as HTMLInputElement
 const valorSemNada = (input: string) => {
   return input === ""
 }
-const validacoes = () => {
-  if (valorSemNada(input.value)) {
-    alert("sem nd")
-  }
+const inputValidarEmail = (input: string)  => {
+  const regex = /@[a-zA-Z0-9.-]+\.com\b/;
+  return regex.test(input)
 }
 
+
+const exibirtexto = document.querySelector(".exibirtexto") as HTMLParagraphElement
+
+const addClassesEtirar = (texto: HTMLParagraphElement, valor1: string, valor2: string) => {
+  texto.classList.add(valor1)
+  texto.classList.remove(valor2)
+}
+
+const mensagemVazio = () => {
+  exibirtexto.innerHTML = "O input esta vazio."
+  addClassesEtirar(exibirtexto, "alerta", "remover")
+}
+
+const validacoes = () => {
+  if (valorSemNada(input.value)) {
+    mensagemVazio()
+  }else if(inputValidarEmail(input.value)){
+    alert("email invalido")
+  }else{
+    alert("dados")
+  }
+}
 
 const botao = document.querySelector("button") as HTMLButtonElement
 botao.addEventListener("click", () => {
